@@ -1,0 +1,24 @@
+﻿@page
+@model lab_46_asp_demo_2.Pages.PhilModel
+@{
+}
+
+<h1>Custom Page From Phil</h1>
+
+<-- Razor Syntax -->
+
+</-->
+
+<ul>
+    @foreach(var item in PhilModel.items)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+@{ 
+    <p>@ViewData["ThisDataField"]</p>
+    <p>@ViewBag.ThisDataField</p>
+}
+
+

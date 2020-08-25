@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body onload="buildArray()">
+    <button type="button" onclick="addItem()">Add Item</button>
+    <input id="numberToAdd" />
+    <div id="displayArray"></div>
+    
+    <script>
+            var array01 = [10,20,30]
+            buildArray = () => {
+                console.log(array01);
+                document.getElementById("displayArray").innerText = array01;;
+        }
+
+        addItem = () => {
+            var number = document.getElementById("numberToAdd").value;
+            console.log(number);
+            array01.push(number);
+            document.getElementById("displayArray").innerText = array01;;
+        }
+
+    </script>
+    
+</body>
+    </html>

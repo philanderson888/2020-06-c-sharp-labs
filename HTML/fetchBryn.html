@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+<!-- 
+    
+    This works in Postman   
+    
+    http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?steamids=76561198033967649&key=2901A4BCBA478FDD1D4226CECD80A1C7  
+
+    This works in Powershell
+
+    curl http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=2901A4BCBA478FDD1D4226CECD80A1C7"&"steamids=76561198033967649
+
+-->
+
+<h2>Ajax Partial Example</h2>
+<p><button class="btn btn-primary" id="load">Load</button></p>
+<div id="grid"></div>
+<div id="customer-list">Customer list</div>
+<script>
+    var url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?steamids=76561198033967649&key=2901A4BCBA478FDD1D4226CECD80A1C7';
+
+    async function getData(){
+
+        const response = await fetch(url, {
+            
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'no-cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+
+        });
+        return response.response.json();  // parses JSON response into native JavaScript objects
+
+
+
+
+    }
+
+    getData()
+        .then(data=>{
+            console.log(data);
+            console.log(data.json());
+        });
+
+
+
+
+
+</script>
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+</body>
+</html>

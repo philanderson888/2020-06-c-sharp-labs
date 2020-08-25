@@ -1,0 +1,29 @@
+﻿@page
+@model asp_northwind.Pages.TestModel
+
+<h1>List 1</h1>
+<ul>
+@{
+    foreach (var item in Model.list)
+
+        {
+        <li>item</li>
+        }
+
+    }
+
+</ul>
+
+
+<h1>List 2</h1>
+<ul>
+    @{
+        foreach (var item in Model.list2)
+
+        {
+            <li>item</li>
+        }
+
+    }
+
+</ul>

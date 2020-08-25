@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <h1>Closures</h1>
+    <p>Javascript closures are used to retain value of data which is not global.  Often when we call a function the value of all variables inside the function is reset.</p>
+    <p>A closure enables us to have private variables in a function which we can call over and over again, but not have to reset all variables</p>
+    
+</body>
+<script>
+    // NOT A CLOSURE!  GLOBAL VARIABLE - POOR PRACTICE!
+    var global = 100;
+    function incrementGlobal(){
+        global++;
+    }
+    incrementGlobal();
+    incrementGlobal();
+    incrementGlobal();
+    console.log(global);  // 103
+
+
+    // PRIVATE VARIABLE
+    function incrementPrivate(){
+        var privateVar = 200;
+        privateVar++;
+        return privateVar;
+    }
+    incrementPrivate();
+    incrementPrivate();
+    incrementPrivate();
+    console.log(incrementPrivate());
+
+
+// Closures
+var closureFunction = (  () => {
+    var counter = 0;
+    return (
+        function(){ 
+            counter +=1; 
+            return counter; 
+        }
+    )();
+
+closureFunction();
+closureFunction();
+closureFunction()
+console.log(closureFunction())
+
+});
+
+
+
+</script>
+</html>

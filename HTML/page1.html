@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page1</title>
+    <style>
+        body{
+            /* font-family: 'comic sans ms'; */
+            font-family: ComicSans;
+        }
+        @font-face{
+            font-family: ComicSans;
+            src: url(assets/fonts/Qdbettercomicsans-jEEeG.ttf)
+        }
+        div.container{
+            background-color:#e1e9f3dc;
+            padding:5px;
+            border-radius: 20px;
+        }
+        div.box{
+            width:100px;
+            height:100px;
+            background-color: rgb(171, 205, 240);
+            border:1px solid rgb(179, 179, 243);
+            margin:5px;
+            display:inline-block;
+            text-align: center;
+            border-radius: 10px;
+        }
+        div.box:hover{
+            font-weight: 700;
+            /*border:2px solid rgb(179, 179, 243);*/
+            /*width:98px;*/
+            /*font-size: 1.2em;*/
+            background-color: rgb(133, 184, 236);
+        }
+    </style>
+</head>
+<body>
+    <h1>Basic CSS Styling</h1>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div>
+        <div class="box">Box 7</div>
+        <div class="box">Box 8</div>
+        <div class="box">Box 9</div>
+        <div class="box" id="box10">Box 10</div>
+        <div class="box" onclick="doThis()">Box 11</div>
+    </div>
+    <script>
+        var elements = document.getElementsByClassName("box");
+        for(var i=0;i<elements.length;i++){
+            elements[i].addEventListener("click",()=>{  alert('you clicked')  });
+        }
+            
+        function doThis(){
+            alert('hey you clicked');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.box{
+            display:inline-block;
+            width:100px;
+            height:100px;
+            background-color: blue;
+        }
+        #one{
+            transition:width 2s;
+        }   
+        #one:hover{
+            width:200px;
+        }
+        #two{
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="box" id="one"></div>
+    <div class="box" id="two" onmouseover="change()" onmouseout="changeBack()"></div>
+</body>
+<script>
+    change = () =>{
+        document.getElementById("two").style.width = "200px";
+    }
+    changeBack = () => {
+        document.getElementById("two").style.width = "100px";
+    }
+</script>
+</html>

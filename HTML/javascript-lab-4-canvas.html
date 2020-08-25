@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        var c = document.getElementById('myCanvas');
+        var ctx = c.getContext("2d");
+        ctx.canvas.width=window.innerWidth;
+        ctx.canvas.height=window.innerHeight;
+        ctx.beginPath();
+        ctx.rect(10,10,300,250);
+        ctx.fillStyle="red";
+        ctx.fill();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(100,100,20,0,2*Math.PI)
+        ctx.fillStyle="blue";
+        ctx.fill();
+        ctx.stroke();
+        doThis = () => {
+            alert('you clicked')
+        }
+        c.addEventListener('click',doThis);
+    </script>
+</body>
+</html>
